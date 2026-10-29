@@ -55,17 +55,39 @@ public class Student {
         return count;
     }
 
-        public int u_student(){
-            int count = 0;
-            for( int i = 0; i< grade.length; i++){
-                if(grade[i] < 25){
-                    count++;
-                }
-
+    public int u_student() {
+        int count = 0;
+        for (int i = 0; i < grade.length; i++) {
+            if (grade[i] < 25) {
+                count++;
             }
-            return count;
-        }
-        
 
+        }
+        return count;
+    }
+
+    public String highestStudent() {
+        int highestIndex = 0;
+
+        for (int i = 1; i < grade.length; i++) {
+            if (grade[i] > grade[highestIndex]) {
+                highestIndex = i;
+            }
+        }
+
+        return student[highestIndex] + " " +
+                grade[highestIndex] + " poäng ";
+
+    }
+    public String lowestStudent(){
+      int lowestindex = 0;
+      for (int i = 1; i < grade.length; i++){
+          if (grade[i] < grade[lowestindex]){
+              lowestindex = i;
+          }
+      }
+      return student[lowestindex] + " " +
+              grade[lowestindex] + " poäng ";
+    }
 }
 
