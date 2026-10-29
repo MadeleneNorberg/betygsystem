@@ -3,5 +3,6 @@ public class Main {
         Student s = new Student();
 
         System.out.println(s.highestStudent());
+        System.out.println(s.averageGrade());
     }
 }

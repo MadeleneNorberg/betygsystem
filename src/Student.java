@@ -39,7 +39,7 @@ public class Student {
 
     }
 
-    public int countstudents() {
+    public int countStudents() {
         return student.length;
 
     }
@@ -55,7 +55,7 @@ public class Student {
         return count;
     }
 
-    public int u_student() {
+    public int u_Student() {
         int count = 0;
         for (int i = 0; i < grade.length; i++) {
             if (grade[i] < 25) {
@@ -76,7 +76,8 @@ public class Student {
         }
 
         return student[highestIndex] + " " +
-                grade[highestIndex] + " poäng ";
+                grade[highestIndex] + " poäng ("+
+                results(grade[highestIndex])+ ")";
 
     }
     public String lowestStudent(){
@@ -87,7 +88,25 @@ public class Student {
           }
       }
       return student[lowestindex] + " " +
-              grade[lowestindex] + " poäng ";
+              grade[lowestindex] + " poäng ( "+
+              results(grade[lowestindex])+")";
+    }
+    public double averageGrade(){
+        int sum = 0;
+        for( int i = 0; i < grade.length; i++ ){
+            sum += grade[i];
+        }
+        return (double) sum / grade.length;
+    }
+    public void printSummary() {
+
+        System.out.println("\nSAMMANFATTNING");
+        System.out.println("Antal elever: " + countStudents());
+        System.out.println("Godkända elever: " + g_Students());
+        System.out.println("Underkända elever: " + u_Student());
+        System.out.println("Högsta resultat: " + highestStudent());
+        System.out.println("Lägsta resultat: " + lowestStudent());
+        System.out.printf("Medelpoäng: %.1f%n", averageGrade());
     }
 }
 
