@@ -4,5 +4,7 @@ public class Main {
 
         System.out.println(s.highestStudent());
         System.out.println(s.averageGrade());
+        s.printSummary();
+
     }
 }

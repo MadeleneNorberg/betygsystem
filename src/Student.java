@@ -108,5 +108,18 @@ public class Student {
         System.out.println("Lägsta resultat: " + lowestStudent());
         System.out.printf("Medelpoäng: %.1f%n", averageGrade());
     }
+    public void searchStudent(String name){
+        for(int i = 0; i< student.length;i++){
+            if(student[i].equalsIgnoreCase(name)){
+                System.out.println(student[i]+"har"+
+                        grade[i]+ "poäng och är" +
+                        results(grade[i]));
+                return;
+
+            }
+
+        }
+        System.out.println("elevens namn hittades inte" + name);
+    }
 }
 
