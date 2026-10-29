@@ -1,10 +1,10 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Student s = new Student();
+        Menu menu = new Menu();
+        menu.run();
 
-        System.out.println(s.highestStudent());
-        System.out.println(s.averageGrade());
-        s.printSummary();
 
     }
 }

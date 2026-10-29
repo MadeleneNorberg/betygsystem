@@ -1,5 +1,5 @@
 public class Student {
-    String[] student = {"Anna ", "Erik", "Sara", "Johan", "Emma", "Ali", "Lisa", "Oskar"};
+    String[] student = {"Anna", "Erik", "Sara", "Johan", "Emma", "Ali", "Lisa", "Oskar"};
     int[] grade = {34, 18, 42, 27, 39, 12, 31, 24};
 
     public Student() {
@@ -108,18 +108,19 @@ public class Student {
         System.out.println("Lägsta resultat: " + lowestStudent());
         System.out.printf("Medelpoäng: %.1f%n", averageGrade());
     }
-    public void searchStudent(String name){
+    public String searchStudent(String name){
         for(int i = 0; i< student.length;i++){
-            if(student[i].equalsIgnoreCase(name)){
-                System.out.println(student[i]+"har"+
-                        grade[i]+ "poäng och är" +
-                        results(grade[i]));
-                return;
+            if (student[i].trim().equalsIgnoreCase(name.trim())) {
+
+                return student[i] +" " +"har"+ " "+
+                        grade[i]+ " "+ "poäng och är " +
+                        results(grade[i]);
+
 
             }
 
         }
-        System.out.println("elevens namn hittades inte" + name);
+        return " Elev hittads inte ";
     }
 }
 
